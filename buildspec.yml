@@ -6,19 +6,19 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 785975698029.dkr.ecr.ap-south-1.amazonaws.com
-      - REPOSITORY_URI=785975698029.dkr.ecr.ap-south-1.amazonaws.com/ecs-package-repository
+      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 533267037285.dkr.ecr.ap-south-1.amazonaws.com
+      - REPOSITORY_URI=533267037285.dkr.ecr.ap-south-1.amazonaws.com/webapp
   build:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...          
-      - docker build -t ecs-package-repository:latest -f dockerfile .
-      - docker tag ecs-package-repository:latest 785975698029.dkr.ecr.ap-south-1.amazonaws.com/ecs-package-repository:latest      
+      - docker build -t webapp:latest -f dockerfile .
+      - docker tag webapp:latest 533267037285.dkr.ecr.ap-south-1.amazonaws.com/webapp:latest      
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image to ECR...
-      - docker push 785975698029.dkr.ecr.ap-south-1.amazonaws.com/ecs-package-repository:latest
+      - docker push 533267037285.dkr.ecr.ap-south-1.amazonaws.com/webapp:latest
 artifacts:
     files: 
       - imagedefinitions.json
