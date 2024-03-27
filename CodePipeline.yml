@@ -7,19 +7,19 @@ Parameters:
     Default: dev
   GithubUserName:
     Type: String
-    Default: <USERNAME>
+    Default: Brodlie
   GithubRepo:
     Type: String
-    Default: Fargate-ECSCluster-Cloudformation
+    Default: cloudformation-test
   GithubBranch:
     Type: String
-    Default: <BRANCH>
+    Default: main
   GithubOAuthToken:
     Type: String
-    Default: <GITHUB ACCESS TOKEN>
+    Default: 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
   ContainerPort:
     Type: Number
-    Default: 8080
+    Default: 80
 
 Resources:
 
